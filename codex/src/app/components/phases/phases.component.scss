@@ -1,0 +1,83 @@
+.wrapper {
+    margin: 1em;
+    margin-top: 2.7em;
+    text-align: center;
+    font-size: 20px;
+    line-height: 2.2;
+  }
+
+.content{    
+    text-align: center;
+    align-items: center;
+    // div{
+    // border-style: solid;
+    // border-color: blue;
+    // }
+}
+
+.obj{
+    display: grid;
+    grid-template-areas: 
+    " . identify identify ."
+    " . phase phase ."
+    " . description description ."
+}
+
+.identify {
+    grid-area: identify;
+    text-align: center;
+    margin-top: 20px;
+    
+    div{
+        height: 35px;
+    }
+    .sans_name{
+        font-size: 2rem;
+        text-align: center;
+        padding: 10px;
+    }
+    .name{
+        font-size: 1.5rem;
+    }
+  }
+  
+  .phase {
+    grid-area: phase;
+    img{
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        text-align: center;
+        align-items: center;
+        // margin-right: 120px;
+    }
+  }
+  
+  .description {
+    grid-area: description;
+  }
+
+
+
+@media only screen and (max-width: 560px){
+
+    .wrapper{
+        margin-top: 2em;
+    }
+    .content{
+        text-align: center;
+        align-items: center;
+
+    }
+    .obj{
+        display: grid;
+        grid-template-areas: 
+        ". phase phase ."
+        ". identify  identify ."
+        "description description description description";
+        img{
+            margin: auto;
+        }
+    }
+
+  }

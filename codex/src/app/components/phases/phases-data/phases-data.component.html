@@ -1,0 +1,39 @@
+<div>Phase Edit</div>
+<div class="wrapper">
+    
+        <form 
+        [formGroup]="this.dataService.phaseForm"
+        (ngSubmit)="onSubmit()">
+    
+            <div>
+              
+                    <input placeholder="Name" formControlName="name" name="name">
+                    <input placeholder="Symbolism" formControlName="symbolism" name="symbolism">
+                    <input placeholder="Rise and Set" formControlName="riseset" name="riseset">
+                    <input placeholder="Offerings" formControlName="offerings" name="offerings">
+                    <input placeholder="Power" formControlName="power" name="power">
+
+                    <button type="submit"> Submit</button>
+            
+            </div>
+    
+            </form>
+           
+              <div>
+                <div *ngFor="let phase of phases" >
+                <div (click)='choosePhase(phase)' >{{phase.name}} </div> 
+            </div>
+              </div>             
+             
+    
+            <div class="editorial">
+              <div>Edit here:</div>
+              <div *ngIf='phaseToEdit != null'>
+                {{phaseToEdit.name}} 
+                <button *ngFor='let planet of planets' (click)='pushPlanet(planet)'> {{planet.name}}</button>
+ 
+              </div>
+            </div>
+           
+    </div>
+    

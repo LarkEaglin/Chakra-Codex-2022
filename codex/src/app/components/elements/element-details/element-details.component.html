@@ -1,0 +1,49 @@
+
+<app-toolbar class="toolbar" ></app-toolbar>
+
+<div routerLink='/elements' class="category-page selector">
+    >>elements
+</div>
+
+
+<div class="wrapper">
+
+
+    <div class="title">
+        <div class="name">{{ element.name }}</div>
+    </div>
+
+    <div class="image">
+        <img  class="mainImage" src="{{element.mainImage}}">
+    </div>
+
+    <div class="details1">
+        <div><span class="key">*Polarity:</span> {{element.polarity}}  </div>
+        <div> <span class="key">*Direction:</span> {{ element.direction }}  </div>
+        <div > <span class="key">*Quality:</span> {{ element.qualities }} </div>
+        <div><span class="key">*Color: {{element.color}} </span> </div>
+        <div><span class="key">*Tools:</span> {{element.tools}} </div>
+    </div>
+
+    <div class="symbolism">
+        <div> {{element.symbolism}} </div>
+    </div>
+
+    <div class="sub-details">
+        <div class="name">Esoteric Correspondences</div>
+        <div class="subbed" *ngFor="let chakra of chakras">
+            <img [routerLink]="['/chakra', chakra.id]" class='mainImage' src="{{chakra.mainImage}}">
+            <h4>{{chakra.name}}</h4>
+        </div>
+        <div class="subbed" *ngFor="let crystal of crystals">
+            <img [routerLink]="['/crystal', crystal.id]" class='mainImage' src="{{crystal.mainImage}}">
+            <h4>{{crystal.name}}</h4>
+        </div>
+    </div>
+
+ 
+        
+  
+    
+
+</div>

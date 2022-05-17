@@ -1,0 +1,173 @@
+.shop{
+  font-size: 2em;
+}
+
+#homepage{
+    text-align: center;
+    margin-top: 190px;
+    // font-family: 'Source Code Pro', monospace;
+    
+}
+
+#footer{
+    font-size: 80%;
+    position: absolute;
+    bottom: 0;
+}
+
+.button{
+    background: none;
+    border: none;
+    color: white;
+}
+
+
+.wrapper{
+  margin: auto;
+  margin-top: 65px;
+  justify-self: center;
+  text-align: center;
+    align-content: center;
+
+  display: grid;
+  grid-template-areas:
+  ". cover cover ."
+  "about about about about"
+  " . gallery gallery . ";
+
+  a{
+    text-decoration: none;
+  }
+  
+}
+
+.cover{
+  grid-area: cover;
+  justify-self: center;
+  text-align: center;
+    // align-content: center;
+    //  text-align: center;
+
+  // background-image: url('../../../assets/merkaba\ and\ seed-03.png');
+  // height: 125px;
+  img{
+    height: 250px;
+    // margin: auto;
+    
+  }
+  // border-style: solid;
+  // border-color: blue;
+  margin: 6px;
+  // div{
+  //   margin: auto;
+  // }
+}
+.about{
+  grid-area: about;
+  line-height: 2;
+  font-size: 1.2rem;
+  margin-left: 80px;
+  margin-right: 80px;
+
+}
+
+.nav-index {
+  margin-right: 10px;
+
+}
+.nav-index .drop-down{
+  // visibility: hidden;
+  display: none;
+  background-color: black;
+}
+.nav-index:hover .drop-down{
+  // visibility: visible;
+  display: contents;
+  div{
+    margin-top: 10px;
+
+  }
+}
+.gallery{
+  grid-area: gallery;
+  // display: inline;
+  // div, img{
+  //   border-style: solid;
+  //   border-color: blue;
+  // }
+}
+.gallery-item {
+  display: grid;
+  grid-template-areas: 
+    '. title title .'
+    '. image image .';
+  
+  .title{
+    grid-area: title;
+    text-align: center;
+    margin: auto;
+    .title-name{
+      font-size: 2.2rem;
+    }
+    .detail_1{
+      font-size: 1.5rem;
+    }
+  }
+  .image{
+    grid-area: image;
+    img{
+        max-width: 260px;
+        height: auto;
+        text-align: center;
+        align-items: center;
+    }
+    
+  }
+  .details{
+    grid-area: details;
+  }
+}
+
+.shoppingLink{
+  margin: 5px;
+}
+
+
+
+
+@media only screen and (max-width: 560px){
+
+  .wrapper{
+    display: grid;
+    grid-template-areas: 
+    "cover cover cover cover"
+    'about about about about'
+    'gallery gallery gallery gallery';
+    margin: auto;
+    margin-top: 55px;
+    
+  }
+
+  .gallery-item{
+    grid-template-areas:
+    '. title title .'
+    '. image image .';
+  }
+  .image{
+    img{
+      margin-left: auto;
+      margin-right: auto;
+    }
+    // border-style: solid;
+    // border-color: blue;
+    }
+  .about{
+    // border-style: solid;
+    // border-color: blue;
+    line-height: 2;
+    font-size: 1.3em;
+    margin-left: 20px;
+    margin-right: 20px;
+  
+  }
+}

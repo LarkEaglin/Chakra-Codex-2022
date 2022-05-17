@@ -1,0 +1,23 @@
+
+//  div{
+//     border-style: solid;
+//     border-color: blue;
+//     margin: 3px;
+//     }
+
+.wrapper{
+max-width: 500px;
+text-align: center;
+}
+
+.display{
+    max-width: 75%;
+    min-width: 100px;
+    margin: auto;
+    align-items: center;
+    // overflow: hidden;
+}
+.product-img{
+    width: 100%;
+    height: auto;
+}

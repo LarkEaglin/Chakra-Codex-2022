@@ -1,0 +1,88 @@
+<app-toolbar class="toolbar" ></app-toolbar>
+
+<div class="wrapper">
+    <div class="input">
+
+        <form 
+        [formGroup]="imageForm"
+        (submit)='onSubmit(imageForm.value)' >
+            <div class="imageBox">
+                <img class="image" [src]="imgSrc" (click)='imgPreviewClick.click()' >
+            </div>
+            <div >
+                
+                <label>Select File to Upload</label>
+                <input type="file"  #imgPreviewClick formControlName="imgUrl" (change)="showPreview($event)" >
+                
+            </div>
+            <div >
+                Name:<input  class="name" placeholder="Name" formControlName="imgName" name="imgName"> <br>
+
+
+                Caption:<input class="definition" placeholder="Caption" formControlName="caption" name="caption"> <br>
+                Shopping Link:<input class="definition" placeholder="Shopping Link" formControlName="shoppingLink" name="shoppingLink"> <br>
+
+                <select formControlName="category">
+                    <option value="chakras">Chakras</option>
+                    <option value="herbs">Herbs</option>
+                    <option value="elements">Elements</option>
+                    <option value="index">Index</option>
+                    <option value="crystals">Crystals</option>
+                    <option value="planets">Planets</option>
+                    <option value="phases">Phases</option>
+                    <option value="solids">Platonic Solids</option> 
+                </select>
+            </div>
+            <div class="submit">
+                <button  
+                type="submit" >Submit </button>
+            </div> <br>
+
+            <h2 class="gallery"> Gallery</h2>
+    </form> 
+
+    </div>
+
+    
+    <div class="placements" >
+   
+        <div class="placements" *ngFor="let img of  (images | imageEditorOrder:sortBy)" >
+            <div >
+                <img class="image" (click)='chooseImg(img)' src="{{img.imgUrl}}"> 
+                <h3>*{{img.imgName}}:</h3>
+                <div>*{{img.caption}}, {{img.category}}</div>
+                
+                <!-- <div>*{{img.category}}</div>
+                <div>*{{img.shoppingLink}}</div>-->
+                <div>URL:{{img.imgUrl}}</div> 
+                <div>ID: {{img.id}}</div>
+
+            </div>
+            
+            <div class="editorial">
+
+                
+                <div *ngIf='imgToEdit != null'>
+
+                    <div *ngIf='imgToEdit.id == img.id'>
+                
+                        <h2>Edit <div class="blu"> {{img.name}}</div> here:</h2>
+                        <button (click)='delImg(imgToEdit)'>Del</button>
+                        <button *ngFor='let chakra of chakras' (click)='pushChakra(chakra)'> {{chakra.name}}</button> <br>
+                        <button *ngFor='let element of elements' (click)='pushEl(element)'> {{element.name}}</button> <br>
+                        <button *ngFor='let planet of planets' (click)='pushPlanet(planet)'> {{planet.name}}</button> <br>
+                        <button *ngFor='let crystal of crystals' (click)='pushCrystal(crystal)'> {{crystal.name}}</button> <br>
+                        <button *ngFor='let astro of astros' (click)='pushAstro(astro)'> {{astro.name}}</button> <br>
+                        <button *ngFor='let solid of solids' (click)='pushSolid(solid)'> {{solid.name}}</button>            
+                    </div>
+                    
+                </div>
+
+          </div>
+
+        </div>
+
+
+
+      </div> 
+</div>

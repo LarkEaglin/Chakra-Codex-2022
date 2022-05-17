@@ -1,0 +1,48 @@
+<app-toolbar class="toolbar" ></app-toolbar>
+
+<div>Crystal Edit</div>
+<div class="wrapper">
+    
+        <form 
+        [formGroup]="this.dataService.crystalForm"
+        (ngSubmit)="onSubmit()">
+    
+            <div>
+              
+                    <input placeholder="Name" formControlName="name" name="name">
+                    <input placeholder="Symbolism" formControlName="symbolism" name="symbolism">
+                    <input placeholder="Alt_name" formControlName="alt_name" name="alt_name">
+                    <input placeholder="crystal_system" formControlName="crystal_system" name="crystal_system">
+
+                    <button type="submit"> Submit</button>
+            
+            </div>
+    
+            </form>
+           
+              <div>
+                <div *ngFor="let crystal of crystals" >
+                <div (click)='chooseCrystal(crystal)' >{{crystal.name}} </div> 
+            </div>
+              </div>             
+             
+    
+            <div class="editorial">
+              <div>Edit here:</div>
+              <div *ngIf='crystalToEdit != null'>
+                {{crystalToEdit.name}} 
+                <button (click)='del(crystalToEdit)'>Del</button> <br>
+                <button *ngFor='let element of elements' (click)='pushEl(element)'> {{element.name}}</button> <br>
+                <button *ngFor='let planet of planets' (click)='pushPlanet(planet)'> {{planet.name}}</button> <br>
+                <button *ngFor='let chakra of chakras' (click)='pushChakra(chakra)'> {{chakra.name}}</button> <br>
+                <button *ngFor='let astro of astros' (click)='pushAstro(astro)'> {{astro.name}}</button> <br>
+                <button *ngFor='let solid of solids' (click)='pushSolid(solid)'> {{solid.name}}</button> <br>
+                <button *ngFor='let attribute of attributes' (click)='pushAttribute(attribute)'> {{attribute.type}}</button> <br>
+                      
+                
+                          
+              </div>
+            </div>
+           
+    </div>
+    

@@ -1,0 +1,25 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    margin: 20px;
+
+    text-align: center;
+
+}
+.content{
+    align-items: center;
+    padding: 10px;
+    font-size: 22px;
+
+    div{
+        margin-top: 10px;
+    }
+}
+div{
+    // border-style: solid;
+    // border-color: blue;
+
+    .side-image{
+        height: 150px;
+    }
+}

@@ -1,0 +1,25 @@
+<app-toolbar  class="toolbar" ></app-toolbar>
+
+<div class="wrapper">
+    <div class="title">
+        <div routerLink='/phases'  class="category-page selector" >phases/</div>
+        <div @fade class="name"> {{ phase.name }}</div>
+    </div>
+
+    <div class="sub-details">
+        <div><span class="key">Power: </span>{{phase.power}}</div>
+    </div>
+
+    <div class="image"> <img src="{{phase.mainImage}}"> </div>
+
+    <div class="details">
+        <div>* Place <span class="key" >{{phase.offerings}}</span> on your alter when working with the energy of the {{phase.name}}.</div>
+        <div><span class="key">* Rises / Sets :</span>{{phase.riseset}}</div>
+    </div>
+
+    <div class="symbolism">
+        <div> {{phase.symbolism}} </div>
+    </div>
+
+
+</div>

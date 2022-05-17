@@ -1,0 +1,62 @@
+<app-toolbar class="toolbar" ></app-toolbar>
+
+
+
+<div class="wrapper">
+
+    <div class="title">
+        <div routerLink='/planets' class="category-page selector">planets/ </div>
+        <div @fade class="name">{{ planet.name}}</div>
+    </div>
+
+    <div class="image">
+        <!-- <img  class="planetGlyph" src="{{planet.mainImage}}"> -->
+        <img @fade class="mainImage" src="{{planet.mainImage}}">
+    </div>
+
+    <div class="affirmation"> <span class="key">Meditative Principle: </span> <br> {{ planet.affirmation }} </div>
+
+    <div class="details-top">
+        <div> <span class="key">Exalted In:</span> {{planet.exaltation}} </div>
+        <div> <span class="key">detriment:</span> {{planet.detriment}} </div>
+        <div> <span class="key">rules:</span> {{planet.rules}} </div>
+        <div> <span class="key">falls:</span> {{planet.falls}} </div>
+   </div>
+
+   <div class="details">
+
+    <div> <span class="key">Polarity:</span>  {{planet.polarity}}</div>
+    <div> <span class="key">Qualities:</span>  {{planet.qualities}}</div>
+    <div> <span class="key">Direction:</span>  {{planet.direction}}</div>
+    <div> <span class="key">Affected Sense:</span>  {{planet.affected_sense}}</div>
+    <div> <span class="key">Associated Organ:</span>  {{planet.organ}}</div>
+    <div> <span class="key">Ruling Day:</span>  {{planet.day}}</div>
+    <div> <span class="key">Metal:</span>  {{planet.metal}}</div>
+    <div> <span class="key">Ritual Focus:</span>  {{planet.ritual_focus}}</div>
+    <div><span class="key">Symbols: </span> {{planet.symbols}} </div>
+    <div><span class="key">Retrograde Period: </span> {{planet.retrograde_period}} </div>
+    <div >*{{ planet.associated_dieties}}</div>
+
+   </div>
+   <div class="symbolism">
+    <div  > {{planet.symbolism}}</div>
+    <div  > {{planet.symbolism2}}</div>
+    <div  > {{planet.symbolism3}}</div>
+   </div>
+
+   <div class="sub-details">
+        <div class="name">Esoteric Correspondences</div>
+        <div class="subbed" *ngFor="let chakra of chakras">
+            <img [routerLink]="['/chakra', chakra.id]" class='mainImage' src="{{chakra.mainImage}}">
+            <h4>Chakra: {{chakra.name}}</h4>
+        </div>
+        <div class="subbed" *ngFor="let el of elements">
+            <img [routerLink]="['/element', el.id]" class='mainImage' src="{{el.mainImage}}">
+            <h4>Elements: {{el.name}}</h4>
+        </div>
+   </div>
+
+
+
+
+</div>

@@ -1,0 +1,83 @@
+.planetGlyph{
+    width: 250px ;
+    max-width: 270px;
+}
+
+.wrapper {
+    margin: 1em;
+    text-align: center;
+    margin-top: 65px;
+    grid-column-gap: 10px;
+    grid-row-gap: 1em;
+    text-decoration: none;
+    list-style-type: none;
+    line-height: 2.1;
+    font-size: 18px;
+
+    display: grid;
+    grid-template-areas: 
+    'title title title title'
+    'details-top image image affirmation'
+    'details details details details'
+    'symbolism symbolism symbolism symbolism'
+    '. sub-details sub-details .'
+    
+    ;
+    .key{
+        font-size: 22px;
+    }
+
+  }
+
+.title{
+    grid-area: title;
+}
+.details-top{
+    grid-area: details-top;
+    display: block;
+    margin: auto;
+    margin-left: 50px;
+    text-align: center;
+}
+.image{
+    grid-area: image;
+}
+.affirmation{
+    grid-area: affirmation;
+    display: block;
+    margin: auto;
+    margin-right: 50px;
+    text-align: center;
+}
+.details{
+    grid-area: details;
+}
+.symbolism{
+    grid-area: symbolism;
+}
+.sub-details{
+    grid-area: sub-details;
+}
+@media only screen and (max-width:900px){
+    .wrapper{
+        // margin-left: 2px;
+        // margin-right: 2px;
+        grid-template-areas: 
+        'title title title title'
+        'image image image image'
+        'affirmation affirmation affirmation affirmation'
+        'details-top details-top details-top details-top'
+        'details details details details'
+        'symbolism symbolism symbolism symbolism'
+        'sub-details sub-details sub-details sub-details'
+        ;
+    }
+    .details-top{
+        text-align: center;
+        // margin: auto;
+    }
+    .affirmation{
+        text-align: center;
+        // margin: auto;
+    }
+}

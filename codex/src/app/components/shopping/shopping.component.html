@@ -1,0 +1,42 @@
+<app-toolbar></app-toolbar>
+<div class="wrapper">
+
+    <div class="shopping">
+
+        <div class="info-bar">
+
+            <div class="crystal-ref">
+                <a routerLink='/crystals' >Crystal Reference</a>
+            </div>
+
+            <div class="cart">
+                <!-- <img class="cart-img" src="../../../assets/merkaba and seed-03.png"> -->
+
+                <div (click)="toggle()" class="selector" >  Cart <span class="cart-count"> 3 </span></div>
+
+                <div  *ngIf='show' class="shopping-cart" > 
+                    <app-cart>  </app-cart>
+                </div>    
+            </div>
+           
+           
+       </div> 
+
+        <div class="product-list">
+            <app-product-list> products </app-product-list>
+        </div>
+
+
+        <div class="footer">
+            <app-footer class="footer"> footer </app-footer>
+        </div> 
+        
+
+    </div>
+
+    
+
+
+
+</div>
+

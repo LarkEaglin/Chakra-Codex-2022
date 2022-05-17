@@ -1,0 +1,20 @@
+
+
+  <app-toolbar class="toolbar" ></app-toolbar>
+
+  <div class="wrapper">
+      <div class="content"
+      *ngFor="let element of elements"
+      [routerLink]="['/element', element.id]">
+        <div class="obj" >
+          <div class="identify">
+            <div class="name5">{{element.name}}</div>
+          </div>
+          <div class="element">
+            <img src="{{element.mainImage}}">
+          </div>
+          <div class="description">{{element.symbolism}}</div>
+      </div>
+      </div>
+
+  </div>

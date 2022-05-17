@@ -1,0 +1,11 @@
+<div class="wrapper">
+    <div class="cart-items" *ngFor='let i of  [1,2,3]'>
+        <app-cart-item></app-cart-item>
+        
+    </div>
+
+    <div class="total">
+        <strong>Total: {{1000 | currency:'USD'}}</strong> <br>
+        <button routerLink='/checkout'>Checkout</button>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<!-- <app-toolbar class="toolbar" ></app-toolbar>
+
+<div class="wrapper">
+
+  <div > </div>
+
+  <div>
+    
+    <div class="content"
+    *ngFor="let crystal of crystals"
+    [routerLink]="['/crystal', crystal.id]">
+
+    <div class="name text-zoom"> {{ crystal.name }}  </div>
+  </div>
+   
+    </div>
+
+  
+
+  <div > </div>
+
+</div> -->
+
+<app-toolbar class="toolbar" ></app-toolbar>
+
+  <div class="wrapper">
+
+      <!-- <div class="pageAlert"></div> -->
+      <div class="content"
+      *ngFor="let crystal of crystals"
+      [routerLink]="['/crystal', crystal.id]">
+        <div class="obj" >
+          <div class="identify">
+            <div class="name">{{crystal.name}}</div>
+          </div>
+          <div class="crystal">
+           
+              <img src="{{crystal.mainImage}}">
+          
+            
+          </div>
+          <div class="description">{{crystal.alt_name}}</div>
+      </div>
+      </div>
+
+  </div>

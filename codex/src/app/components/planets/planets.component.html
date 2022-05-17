@@ -1,0 +1,23 @@
+
+<app-toolbar class="toolbar" ></app-toolbar>
+
+  <div class="wrapper">
+
+      <!-- <div class="pageAlert"></div> -->
+      <div class="content"
+      *ngFor="let planet of planets"
+      [routerLink]="['/planet', planet.id]">
+        <div class="obj" >
+          <div class="identify">
+            <div class="name">{{planet.name}}</div>
+          </div>
+          <div class="planet">
+            <img class="glyph" src="{{planet.mainImage}}">
+          </div>
+          <div class="description">{{planet.affirmation}}</div>
+      </div>
+      </div>
+
+      <div class="planetaryDisclaimer">...New planetary details coming soon! -lark</div>
+
+  </div>

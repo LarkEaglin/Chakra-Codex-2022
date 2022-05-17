@@ -1,0 +1,48 @@
+<div>Element Edit</div>
+<div class="wrapper">
+    
+        <form 
+        [formGroup]="this.dataService.elementForm"
+        (ngSubmit)="onSubmit()">
+    
+            <div>
+              
+                    <input placeholder="Name" formControlName="name" name="name"> <br>
+                    <input placeholder="tools" formControlName="tools" name="tools"> <br>
+                    <input placeholder="Symbolism" formControlName="symbolism" name="symbolism"> <br>
+                    <input placeholder="color" formControlName="color" name="color"> <br>
+                    <input placeholder="direction" formControlName="direction" name="direction"> <br>
+                    <input placeholder="polarity" formControlName="polarity" name="polarity"> <br>
+                    <input placeholder="geometry" formControlName="geometry" name="geometry"> <br>
+                    <input placeholder="qualities" formControlName="qualities" name="qualities"> <br>
+
+                    <button type="submit"> Submit</button>
+            
+            </div>
+    
+            </form>
+           
+              <div>
+                <div *ngFor="let element of elements" >
+                <div (click)='chooseElement(element)' >{{element.name}} </div> 
+            </div>
+              </div>             
+             
+    
+            <div class="editorial">
+              <div>Edit {{elementToEdit.name}} here:</div>
+              <div *ngIf='elementToEdit != null'>
+                {{elementToEdit.name}} : 
+                <button (click)='del(elementToEdit)'>Del</button> <br>
+                <button *ngFor='let herb of herbs' (click)='pushHerb(herb)'> {{herb.name}}</button> <br>
+                <button *ngFor='let planet of planets' (click)='pushPlanet(planet)'> {{planet.name}}</button> <br>
+                <button *ngFor='let crystal of crystals' (click)='pushCrystal(crystal)'> {{crystal.name}}</button> <br>
+                <button *ngFor='let astro of astros' (click)='pushAstro(astro)'> {{astro.name}}</button> <br>
+                <button *ngFor='let chakra of chakras' (click)='pushChakra(chakra)'> {{chakra.name}}</button> <br>
+                
+                          
+              </div>
+            </div>
+           
+    </div>
+    

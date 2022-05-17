@@ -1,0 +1,20 @@
+
+
+<app-toolbar class="toolbar" ></app-toolbar>
+
+  <div class="wrapper">
+      <div class="content"
+      *ngFor="let phase of phases"
+      [routerLink]="['/phase', phase.id]">
+        <div class="obj" >
+          <div class="identify">
+            <div class="name">{{ phase.name }}</div>
+          </div>
+          <div class="phase">
+            <img src="{{phase.mainImage}}">
+          </div>
+          <div class="description">{{phase.power}}</div>
+      </div>
+      </div>
+
+  </div>

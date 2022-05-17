@@ -1,0 +1,64 @@
+<div>Planet Edit</div>
+<div class="wrapper">
+    
+        <form 
+        [formGroup]="this.dataService.planetForm"
+        (ngSubmit)="onSubmit()">
+    
+            <div>
+              
+                    <input placeholder="name" formControlName="name" name="name">
+                    <input placeholder="alt_name" formControlName="alt_name" name="alt_name">
+
+                    <input placeholder="day" formControlName="day" name="day">
+                    <input placeholder="exaltation" formControlName="exaltation" name="exaltation">
+                    <input placeholder="detriment" formControlName="detriment" name="detriment">
+                    <input placeholder="falls" formControlName="falls" name="falls">
+                    <input placeholder="rules" formControlName="rules" name="rules">
+                    <input placeholder="metal" formControlName="metal" name="metal">
+                    <input placeholder="Symbolism" formControlName="symbolism" name="symbolism">
+                    <input placeholder="Symbolism" formControlName="symbolism2" name="symbolism">
+                    <input placeholder="Symbolism" formControlName="symbolism3" name="symbolism">
+                    <input placeholder="associated_dieties" formControlName="associated_dieties" name="associated_dieties">
+                    <input placeholder="polarity" formControlName="polarity" name="polarity">
+                    <input placeholder="herb_qualities" formControlName="herb_qualities" name="herb_qualities">
+                    <input placeholder="ritual_focus" formControlName="ritual_focus" name="ritual_focus">
+                    <input placeholder="affected_sense" formControlName="affected_sense" name="affected_sense">
+                    <input placeholder="affirmation" formControlName="affirmation" name="affirmation">
+                    <input placeholder="symbols" formControlName="symbols" name="symbols">
+                    <input placeholder="organ" formControlName="organ" name="organ">
+                    <input placeholder="direction" formControlName="direction" name="direction">
+                    <input placeholder="retrograde_period" formControlName="retrograde_period" name="retrograde_period">
+                    <input placeholder="qualities" formControlName="qualities" name="qualities">
+                    <input placeholder="ruling_house" formControlName="ruling_house" name="ruling_house">
+                    
+
+                    <button type="submit"> Submit</button>
+            
+            </div>
+    
+            </form>
+           
+              <div>
+                <div *ngFor="let planet of planets" >
+                  <div (click)='choosePlanet(planet)' >{{planet.name}} </div> 
+                </div>
+              </div>             
+             
+    
+            <div class="editorial">
+              <div>Edit here:</div>
+              <div *ngIf='planetToEdit != null'>
+                {{planetToEdit.name}} 
+                <button (click)='del(planetToEdit)'>Del</button>
+                <button *ngFor='let herb of herbs' (click)='pushHerb(herb)'> {{herb.name}}</button>
+                <button *ngFor='let crystal of crystals' (click)='pushCrystal(crystal)'> {{crystal.name}}</button>
+                <button *ngFor='let chakra of chakras' (click)='pushChakra(chakra)'> {{chakra.name}}</button>
+                <button *ngFor='let element of elements' (click)='pushEl(element)'> {{element.name}}</button>
+                
+                          
+              </div>
+            </div>
+           
+    </div>
+    
