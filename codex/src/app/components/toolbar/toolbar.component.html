@@ -1,0 +1,72 @@
+<div class="wrapper">
+    <div class="text-zoom" routerLink='/homepage'>codex</div>
+
+    <div class="navigationUL">
+      <div (click)="toggle()" class="nav-drop">Menu</div> 
+
+            <div  *ngIf='show' class="drop-down"> 
+                <div class="selector" routerLink='/chakras' >chakras</div>
+                <div class="selector" routerLink='/crystals' >crystals</div>
+                <div class="selector" routerLink='/phases' >phases</div>
+                <div class="selector" routerLink='/elements' >elements</div>
+                <div class="selector" routerLink='/planets' >planets</div>
+                <div class="text-zoom" routerLink='/shop' >shop</div>
+            </div>    
+
+    </div>
+
+
+
+</div>
+
+
+<!-- <div class="wrapper">
+
+    <div  class="home-link ">
+        <div @fade [class.hidden]='showNav'>
+         <div routerLink='/homepage' >Codex</div>
+        <div  class="text-zoom" (click)="toggleNav()" >nav</div>   
+        </div>
+        
+    <div @fade *ngIf='showNav' class="nav-content-wrapper" >
+
+
+        <div class="nav-content"> 
+            <div class="text-zoom" routerLink='/chakras' >chakras</div>
+            <div class="text-zoom" routerLink='/phases' >phases</div>
+            <div class="text-zoom" routerLink='/elements' >elements</div>
+            <div class="text-zoom" routerLink='/planets' >planets</div>
+            <div class="text-zoom" routerLink='/herbs' >herbs</div> -->
+            <!-- <div class="text-zoom" routerLink='/crystals' >crystals</div> -->
+            <!-- <div class="text-zoom" routerLink='/solids' >platonic Solids</div> -->
+            <!-- <div class="text-zoom" routerLink='/attributes' >attributes</div> -->
+        <!-- </div>
+        
+    </div>
+
+    </div>
+   
+</div> -->
+
+<!--      
+            <video (click)='close()' class="orb" autoplay loop muted playsinline>
+                <source src="assets/almost.mp4" type="video/mp4" />
+            </video>
+  -->
+
+  <!-- <div  @fade class="wrapper">
+    <div class="text-zoom" routerLink='/homepage'>codex</div>
+    
+        <div class="dropdown">nav 
+        </div>
+        <div class="dropdown-content">
+            <div class="text-zoom" routerLink='/chakras' >chakras</div>
+            <div class="text-zoom" routerLink='/crystals' >crystals</div>
+            <div class="text-zoom" routerLink='/phases' >phases</div>
+            <div class="text-zoom" routerLink='/elements' >elements</div>
+            <div class="text-zoom" routerLink='/planets' >planets</div>
+
+        </div>
+
+</div> -->
+
