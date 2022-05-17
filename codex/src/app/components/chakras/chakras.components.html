@@ -1,0 +1,21 @@
+<app-toolbar class="toolbar" ></app-toolbar>
+
+  <div class="wrapper">
+
+      <!-- <div class="pageAlert"></div> -->
+      <div class="content"
+      *ngFor="let chakra of (chakras| chakraOrder:sortBy )"
+      [routerLink]="['/chakra', chakra.id]">
+        <div class="obj" >
+          <div class="identify">
+            <div class="sans_name">{{chakra.name_sanskrit}}</div>
+            <div class="name">{{chakra.name}}</div>
+          </div>
+          <div class="chakra">
+            <img  src="{{chakra.mainImage}}">
+          </div>
+          <div class="description">{{chakra.body_port}}</div>
+      </div>
+      </div>
+
+  </div>
