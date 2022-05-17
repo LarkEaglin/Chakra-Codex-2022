@@ -1,0 +1,85 @@
+.wrapper {
+    margin: 1em;
+    text-align: center;
+    margin-top: 65px;
+    grid-column-gap: 10px;
+    grid-row-gap: 1em;
+    text-decoration: none;
+    list-style-type: none;
+    line-height: 2.1;
+    font-size: 18px;
+
+  }
+
+//   div{
+//         border-style: solid;
+//     border-color: blue;
+//     }
+
+.organize{
+    display: grid;
+    grid-template-areas: 
+    'title title title title'
+    'port image image affirmation'
+    'details details details details'
+    
+    ;
+    .key{
+        font-size: 22px;
+    }
+}
+
+.title{
+    grid-area: title;
+
+}
+.image{
+    grid-area: image;
+
+}
+.port{
+    grid-area: port;
+    display: block;
+    margin: auto;
+    margin-left: 50px;
+    text-align: center;
+}
+.affirmation{
+    grid-area: affirmation;
+    display: block;
+    margin: auto;
+    margin-right: 50px;
+    text-align: center;
+}
+
+.details{
+    grid-area: details;
+}
+div{
+    margin-bottom: 3px;
+    
+}
+
+@media only screen and (max-width:900px){
+    .organize{
+        text-align: center;
+        display:grid;
+        grid-template-areas: 'title title title title'
+        'image image image image'
+        'affirmation affirmation affirmation affirmation'
+        'port port port port'
+        'details details details details'
+        ;
+    }
+    .port{
+        grid-area: port;
+        margin: auto;
+        text-align: center;
+    }
+    .affirmation{
+        grid-area: affirmation;
+        margin: auto;
+        text-align: center;
+    }
+}
+

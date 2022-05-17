@@ -1,0 +1,39 @@
+.wrapper{
+    margin: 1em;
+  padding: 1em;
+  text-align: center;
+  
+  
+  display: grid;
+  grid-template-areas: 'availList availList data data'
+             'associations associations associations associations'
+  ;
+}
+
+
+
+.availList{
+  grid-area: availList;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.2em;
+}
+
+.data{
+  grid-area: data;
+}
+
+.associations{
+  grid-area: associations;
+  grid-template-areas: '. drag drop .';
+  text-align: center;
+  margin: auto;
+
+  .drag{
+    grid-area:drag ;
+  }
+  .drop{
+    grid-area:drop ;
+  }
+}
+

@@ -1,0 +1,94 @@
+<div class="wrapper">
+  <div *ngIf='chakraToEdit; then update else input'>
+    <!-- template will replace this div -->
+  </div>
+
+  <div class="availList">
+    <div *ngFor="let chakra of chakras" >
+      <div (click)='chooseChakra(chakra)' >{{chakra.name}} </div> 
+  </div>
+  </div>
+
+  <ng-template #input>
+    <div class="data">
+      <form 
+      [formGroup]="this.dataService.chakraForm"
+      (ngSubmit)="onSubmit()">
+
+          <div>
+            
+                  <input placeholder="Order" formControlName="order" name="order">
+                  <input placeholder="Name" formControlName="name" name="name">
+                  <input placeholder="Sanskrit Name" formControlName="name_sanskrit" name="name_sanskrit">
+                  <input placeholder="Translated Sanskrit" formControlName="translated_sanskrit" name="translated_sanskrit">
+                  <input placeholder="body_port" formControlName="body_port" name="body_port">
+                  <input placeholder="color" formControlName="color" name="color">
+                  <input placeholder="petals" formControlName="petals" name="petals">
+                  <input placeholder="earth_port" formControlName="earth_port" name="earth_port">
+                  <input placeholder="earth_port_desc" formControlName="earth_port_desc" name="earth_port_desc">
+                  <input placeholder="frequency" formControlName="frequency" name="frequency">
+                  <input placeholder="note" formControlName="note" name="note">
+                  <input placeholder="affirmations" formControlName="affirmations" name="affirmations">
+                  <input placeholder="symbolism" formControlName="symbolism" name="symbolism">
+                  <button type="submit" > Submit</button>
+          
+          </div> 
+          </form>
+    </div>
+    <!-- end of inputForm -->
+  </ng-template>
+
+  <ng-template  class="data" #update>
+    <div class="data">
+      <form 
+              [formGroup]="this.dataService.chakraForm"
+              (ngSubmit)="onSubmit()">
+
+                <div class="updateForm">
+              
+                  <input placeholder="{{chakraToEdit.order}}" formControlName="order" name="order">
+                  <input placeholder="{{chakraToEdit.name}}" formControlName="name" name="name">
+                  <input placeholder="{{chakraToEdit.name_sanskrit}}" formControlName="name_sanskrit" name="name_sanskrit">
+                  <input placeholder="{{chakraToEdit.translated_sanskrit}}" formControlName="translated_sanskrit" name="translated_sanskrit">
+                  <input placeholder="{{chakraToEdit.body_port}}" formControlName="body_port" name="body_port">
+                  <input placeholder="{{chakraToEdit.color}}" formControlName="color" name="color">
+                  <input placeholder="{{chakraToEdit.petals}}" formControlName="petals" name="petals">
+                  <input placeholder="{{chakraToEdit.earth_port}}" formControlName="earth_port" name="earth_port">
+                  <input placeholder="earth_port_desc" formControlName="earth_port_desc" name="earth_port_desc">
+                  <input placeholder="{{chakraToEdit.frequency}}" formControlName="frequency" name="frequency">
+                  <input placeholder="{{chakraToEdit.note}}" formControlName="note" name="note">
+                  <input placeholder="{{chakraToEdit.affirmations}}" formControlName="affirmations" name="affirmations">
+                  <input placeholder="{{chakraToEdit.symbolism}}" formControlName="symbolism" name="symbolism">
+                  <input placeholder="{{chakraToEdit.mainImage}}" formControlName="mainImage" name="mainImage">
+                  <button type="submit" > Update</button>
+          
+          </div> 
+              </form>
+
+              <button (click)='clearEditor()' class="clear"> Clear</button>
+    </div>
+<!-- end of updateForm -->
+
+  </ng-template>
+
+  <div *ngIf='chakraToEdit' class="associtaions">
+
+
+    <div> {{chakraToEdit.name}} </div> 
+            <button (click)='del(chakraToEdit)'>Del</button> <br>
+            <button *ngFor='let element of elements' (click)='pushEl(element)'> {{element.name}}</button> <br>
+            <button *ngFor='let planet of planets' (click)='pushPlanet(planet)'> {{planet.name}}</button> <br>
+            <button *ngFor='let crystal of crystals' (click)='pushCrystal(crystal)'> {{crystal.name}}</button> <br>
+            <button *ngFor='let astro of astros' (click)='pushAstro(astro)'> {{astro.name}}</button> <br>
+            <button *ngFor='let solid of solids' (click)='pushSolid(solid)'> {{solid.name}}</button> <br>
+                      
+  </div>
+
+</div>
+
+
+
+
+
+
+

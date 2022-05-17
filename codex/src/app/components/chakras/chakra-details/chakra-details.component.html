@@ -1,0 +1,50 @@
+
+<app-toolbar class="toolbar" ></app-toolbar>
+
+
+<div class="wrapper">
+
+
+    <div class="organize">
+
+        <div class="title">
+            <div routerLink='/chakras' class="category-page selector">chakras/</div>
+            <div class="name">{{ chakra.name_sanskrit }} / {{ chakra.translated_sanskrit }}</div>
+        </div>
+
+        <div class="image">
+            <img  class="mainImage" src="{{chakra.mainImage}}">
+        </div>
+
+        <div class="affirmation"> <span class="key">{{chakra.name}} Meditative Principle: </span>  {{ chakra.affirmations }} </div>
+
+        <div class="port">
+            <div> <span class="key">
+                * Body Port: </span> {{chakra.body_port}} </div>
+
+            <div class="receipt" > <span class="key"> * Earth Port: </span> {{chakra.earth_port}} </div>
+        </div>
+
+        <div class="details">
+            <div> <span class="key"> Petals: </span>  {{chakra.petals}} </div>
+            <div> <span class="key"> Color: </span>  {{chakra.color}} </div>
+            <div> <span class="key"> Musical Note: </span> {{chakra.note}} </div>
+            <div> <span class="key">Frequency:  </span>  {{chakra.frequency}}</div>
+
+
+            <div> {{chakra.symbolism}} </div>
+
+            <div class="subbed" *ngFor="let el of elements">
+                <img [routerLink]="['/element', el.id]" class='mainImage' src="{{el.mainImage}}">
+                <h4>{{el.name}}</h4>
+            </div>
+            <div class="subbed" *ngFor="let crystal of crystals">
+                <img [routerLink]="['/crystal', crystal.id]" class='mainImage' src="{{crystal.mainImage}}">
+                <h4>{{crystal.name}}</h4>
+            </div>
+
+    </div>
+    
+
+
+</div>
