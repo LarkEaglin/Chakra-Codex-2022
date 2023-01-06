@@ -79,16 +79,6 @@ import { SquareShopComponent } from './components/square-shop/square-shop.compon
 
 
 
-
-const config = {
-  apiKey: 'AIzaSyCkV84KaRHiTF6AFmrZlYXaHKiX15Ht86U',
-  authDomain: 'codex-252603.firebaseapp.com',
-  databaseURL: 'https://codex-252603.firebaseio.com',
-  projectId: 'codex-252603',
-  storageBucket: 'gs://codex-252603.appspot.com/',
-  messagingSenderId: '789443163112'
-};
-
 @NgModule({
   declarations: [
     AppComponent,
